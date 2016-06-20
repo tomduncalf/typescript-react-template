@@ -9,6 +9,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "0.14.21-alpha",
+    "@types/react-dom": "0.14.8-alpha",
     "typescript": "1.9.0-dev.20160620-1.0"
+  },
+  "dependencies": {
+    "react": "15.1.0",
+    "react-dom": "15.1.0"
   }
 }
