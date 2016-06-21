@@ -4,21 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config config/webpack.config.js"
+    "build": "webpack --config config/webpack.config.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "4.0.22-alpha",
     "@types/react": "0.14.21-alpha",
     "@types/react-dom": "0.14.8-alpha",
+    "@types/requirejs": "2.1.20-alpha",
     "babel-core": "6.9.1",
     "babel-loader": "6.2.4",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.5.0",
     "babel-preset-stage-0": "6.5.0",
+    "react-hot-loader": "3.0.0-beta.2",
     "ts-loader": "0.8.2",
     "typescript": "1.9.0-dev.20160620-1.0",
     "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1",
     "webpack-notifier": "1.3.0"
   },
   "dependencies": {

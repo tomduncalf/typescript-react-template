@@ -4,29 +4,30 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   devtool: 'eval',
-  // This will be our app's entry point (webpack will look for it in the 'src' directory due to the modulesDirectory setting below). Feel free to change as desired.
   entry: [
+    // Add the react hot loader entry point - in reality, you might only want this in your dev config
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
     'index.tsx'
   ],
-  // Output the bundled JS to dist/app.js
   output: {
     filename: 'app.js',
+    publicPath: '/dist',
     path: path.resolve('dist')
   },
   resolve: {
-    // Look for modules in .ts(x) files first, then .js(x)
     extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
-    // Add 'src' to our modulesDirectories as all our app code will live in there
     modulesDirectories: ['src', 'node_modules'],
   },
   module: {
     loaders: [
-      // .ts(x) files should first pass through the Typescript loader, and then through babel
       { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] }
     ]
   },
   plugins: [
-    // Set up the notifier plugin - you can remove this (or set alwaysNotify false) if desired
+    // Add the HMR plugin
+    new webpack.HotModuleReplacementPlugin(),
     new WebpackNotifierPlugin({ alwaysNotify: true }),
   ]
 };
