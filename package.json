@@ -1,13 +1,13 @@
 {
-  "name": "template",
+  "name": "typescript-react-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple template for Typescript + React + Webpack + Babel",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Tom Duncalf",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "4.0.22-alpha",
